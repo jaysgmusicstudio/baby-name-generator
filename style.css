@@ -1,14 +1,16 @@
-/* (Paste the exact content from the 'style.css' from the previous response here) */
+/* General Body and Container Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Changed to a common sans-serif font */
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to top to allow scrolling */
-    min-height: 100vh;
+    min-height: 100vh; /* Minimum height of the viewport */
     margin: 0;
     padding: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    line-height: 1.6; /* Improved readability */
+    color: #333; /* Default text color */
 }
 
 .container {
@@ -18,111 +20,158 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 600px;
-    width: 100%;
+    width: 100%; /* Ensures it takes full width on smaller screens */
+    margin-top: 20px; /* Add some space from the top */
 }
 
+/* Header and Description Styling */
 h1 {
     color: #333;
     margin-bottom: 15px;
-    font-size: 2.2em;
+    font-size: 2.5em; /* Slightly larger title */
+    letter-spacing: -0.5px; /* Tighter letter spacing for larger titles */
+}
+
+/* New tagline style */
+.tagline {
+    font-size: 1.1em; /* Adjust size as needed */
+    color: #555; /* Slightly darker than default paragraph */
+    margin-bottom: 25px; /* Space below the tagline */
+    font-style: italic;
+    max-width: 500px; /* Prevents it from being too wide on large screens */
+    margin-left: auto; /* Center the text block */
+    margin-right: auto; /* Center the text block */
+    line-height: 1.5;
 }
 
 p {
-    color: #555;
+    color: #666;
     margin-bottom: 25px;
-    line-height: 1.6;
+}
+
+/* Input Section Styling */
+.input-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
+    margin-bottom: 20px;
 }
 
 .input-section input[type="text"] {
-    width: calc(50% - 10px);
-    padding: 12px;
+    width: calc(50% - 15px); /* Adjusted width to account for margin */
+    padding: 12px 15px;
     margin: 5px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px; /* Slightly more rounded corners */
     font-size: 1em;
     box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.input-section input[type="text"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Green glow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Section Styling */
 .button-section {
-    margin: 20px 0;
+    margin: 25px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
 }
 
 .button-section button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; /* Primary green */
     color: white;
-    padding: 12px 25px;
+    padding: 14px 30px; /* Larger padding for better touch targets */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded buttons */
     cursor: pointer;
     font-size: 1.1em;
-    margin: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-grow: 1; /* Allow buttons to grow */
+    max-width: 250px; /* Limit max width for wider screens */
 }
 
 .button-section button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+.button-section button:active {
+    transform: translateY(0); /* Press down effect */
+}
+
+
+/* Output Section (Generated Names) Styling */
 .output-section {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap; /* Allow cards to wrap */
     justify-content: space-around;
-    margin-top: 25px;
-    gap: 20px; /* Space between cards */
+    margin-top: 30px;
+    gap: 25px; /* Increased space between cards */
 }
 
 .name-card {
-    background-color: #e9f5e9;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #d4ead4;
-    flex: 1; /* Allow cards to grow/shrink */
-    min-width: 250px; /* Minimum width for cards */
+    background-color: #e8f5e9; /* Lighter green background */
+    padding: 25px; /* More padding */
+    border-radius: 10px; /* More rounded corners */
+    border: 1px solid #c8e6c9; /* Lighter border */
+    flex: 1;
+    min-width: 280px; /* Slightly larger min-width for cards */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space vertically */
+    justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for cards */
 }
 
 .name-card h2 {
-    color: #2e7d32;
+    color: #2e7d32; /* Darker green for card titles */
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-size: 1.6em;
 }
 
 .generated-name {
-    font-size: 1.8em;
+    font-family: 'Georgia', serif; /* A more elegant font for names */
+    font-size: 2.2em; /* Larger name text */
     font-weight: bold;
     color: #333;
-    min-height: 1.8em; /* Ensure consistent height for text */
+    min-height: 2.2em; /* Consistent height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-grow: 1; /* Allow name to take up available space */
-    margin-bottom: 15px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    word-break: break-word; /* Prevent long names from overflowing */
 }
 
 .copy-btn {
-    background-color: #007bff;
+    background-color: #007bff; /* Blue for copy button */
     color: white;
-    padding: 8px 15px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 0.95em;
     transition: background-color 0.3s ease;
 }
 
 .copy-btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Loading Indicator */
 .loading-indicator {
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 1.1em;
-    color: #666;
+    color: #888;
     animation: pulse 1.5s infinite;
 }
 
@@ -130,18 +179,23 @@ p {
     display: none;
 }
 
+/* AdSense Slot Visual Indicator */
 .ad-slot {
-    margin-top: 30px;
-    border: 1px dashed #ccc; /* Visual indicator for ad slot */
-    padding: 10px;
+    margin-top: 40px; /* More space above ad */
+    border: 1px dashed #c0c0c0; /* Lighter border for ad slot */
+    padding: 15px; /* More padding */
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #fafafa; /* Slightly different background */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 0.9em;
+    color: #777;
 }
 
+/* Footer Styling */
 footer {
-    margin-top: 30px;
-    font-size: 0.8em;
-    color: #888;
+    margin-top: 35px; /* More space above footer */
+    font-size: 0.85em;
+    color: #999;
 }
 
 /* Animations */
@@ -151,24 +205,70 @@ footer {
     100% { opacity: 0.6; }
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding on small screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust title size */
+    }
+
+    .tagline {
+        font-size: 1em; /* Adjust tagline size */
+        margin-bottom: 20px;
+    }
+
     .input-section input[type="text"] {
-        width: 100%;
-        margin: 5px 0;
+        width: 100%; /* Full width for inputs */
+        margin: 8px 0; /* More vertical space between inputs */
     }
 
-    .output-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .name-card {
-        width: 90%; /* Take more width on small screens */
+    .button-section {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap */
     }
 
     .button-section button {
-        width: 90%;
-        margin: 5px 0;
+        width: 100%; /* Full width for buttons */
+        max-width: none; /* Remove max-width constraint */
+        padding: 12px 25px; /* Adjust padding */
+    }
+
+    .output-section {
+        flex-direction: column; /* Stack name cards vertically */
+        align-items: center;
+        gap: 20px; /* Space between stacked cards */
+    }
+
+    .name-card {
+        width: 95%; /* Make cards take almost full width */
+        min-width: unset; /* Remove min-width constraint */
+        padding: 20px;
+    }
+
+    .generated-name {
+        font-size: 1.8em; /* Adjust name font size */
+        min-height: 1.8em;
+    }
+}
+
+/* Small adjustments for very small screens */
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .tagline {
+        font-size: 0.95em;
     }
 }
